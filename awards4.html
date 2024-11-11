@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>荣誉证书</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* 页面背景色 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  .certificate-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+  }
+  .certificate-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #fff;
+    margin-bottom: 20px;
+  }
+  .download-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  .download-button:hover {
+    background-color: #45a049;
+  }
+  /* 媒体查询，针对手机屏幕 */
+  @media (max-width: 600px) {
+    .certificate-container {
+      padding: 10px;
+    }
+    .download-button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="certificate-container">
+  <img src="img4.jpg" alt="荣誉证书" class="certificate-image">
+  <a href="#" id="download-button" class="download-button">下载证书</a>
+</div>
+
+<script>
+document.getElementById('download-button').addEventListener('click', function(event) {
+  event.preventDefault(); // 阻止链接默认行为
+  const imageUrl = 'img4.jpg'; // 替换为您的证书图片URL
+  const link = document.createElement('a');
+  link.href = imageUrl;
+  link.download = '荣誉证书.png'; // 指定下载文件名
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
+</script>
+
+</body>
+</html>
