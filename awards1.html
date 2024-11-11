@@ -1,57 +1,85 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <title>获奖通知</title>
-    <style>
-        .setting{
-            background-color:rgb(181, 202, 254);
-            margin: auto;
-            border: 1px solid rgb(214, 213, 230);
-            border-radius: 5px;
-            padding: 20px;
-        }
-        .ground{
-            background-color:rgb(252, 252, 252);
-            margin: auto;
-            width: 80%;
-            border: 1px solid rgb(214, 213, 230);
-            border-radius: 5px;
-            padding: 20px;
-        }
-        .content{
-            color: rgb(45 102 173);
-            margin: auto;
-            width: 90%;
-            padding-top: 25px;
-            list-style-type:none;
-            border-radius: 5px;
-            padding: 20px;
-        }
-        .content li{
-            margin:5px 0px;
-            border-bottom: 1px solid rgb(142, 166, 226);
-            padding: 5px;
-        }
-        
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>荣誉证书</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* 页面背景色 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+  .certificate-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+  }
+  .certificate-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #fff;
+    margin-bottom: 20px;
+  }
+  .download-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  .download-button:hover {
+    background-color: #45a049;
+  }
+  /* 媒体查询，针对手机屏幕 */
+  @media (max-width: 600px) {
+    .certificate-container {
+      padding: 10px;
+    }
+    .download-button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+</style>
 </head>
 <body>
-    <div class="setting">
-        <div class="ground">
-            <ul class="content">
-                <li>作品名称：分支语句----自制自动浇花系统</li>
-                <li>作者姓名：田多文</li>
-                <li>获奖等级：壹等奖</li>
-                <li>证书编号：20233110112</li>
-                <li>证书内容：在《2023年自治区信息技术初中教学论文、高中项目化案例评选活动》中，您的作品《分支语句-----自制自动浇花系统》荣获高中组壹等奖。</li>
-                <li><a href="img1.jpg">下载地址：点击下载打印证书</a></li>
-                </ul>
-        </div>
-    </div>
+
+<div class="certificate-container">
+  <img src="img1.jpg" alt="荣誉证书" class="certificate-image">
+  <a href="#" id="download-button" class="download-button">下载证书</a>
+</div>
+
+<script>
+document.getElementById('download-button').addEventListener('click', function(event) {
+  event.preventDefault(); // 阻止链接默认行为
+  const imageUrl = 'img1.jpg'; // 替换为您的证书图片URL
+  const link = document.createElement('a');
+  link.href = imageUrl;
+  link.download = '荣誉证书.png'; // 指定下载文件名
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
+</script>
+
 </body>
 </html>
